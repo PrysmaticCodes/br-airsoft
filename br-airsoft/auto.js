@@ -29,12 +29,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
 var slide = document.querySelector("#img-carrosel"); // Onde será exibido o carrossel no HTML 
 var imagens = [ // Lista com o caminho das imagens usadas
-    '/imagens/carrosel-1.avif',
-    '/imagens/carrosel-4.avif',
-    '/imagens/carrosel-8.avif',
-    '/imagens/carrosel-3.avif',
-    '/imagens/carrosel-2.avif',
-    '/imagens/carrosel-5.avif',
+    '/imagens/carrosel-1.png',
+    '/imagens/carrosel-4.png',
+    '/imagens/carrosel-8.png',
+    '/imagens/carrosel-3.png',
+    '/imagens/carrosel-2.png',
+    '/imagens/carrosel-5.png',
 ];
 
 var time = 3500; // Tempo de exibição de cada imagem (3.5 segundos)
