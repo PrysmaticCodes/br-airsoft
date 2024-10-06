@@ -89,3 +89,18 @@ document.querySelector("#btn-avanca").addEventListener("click", function() {
 window.onload = function() {
     autoSlideShow();
 };
+
+// mostra senha
+
+function mostrarSenha(){
+    const mostraSenha = document.getElementById('show_password');
+    const senha = document.getElementById('password');
+
+    if(mostraSenha.checked){
+        console.log("checkbox marcado")
+        senha.setAttribute('type', 'text')
+    }else{
+        console.log("checkbox desmarcado")
+        senha.setAttribute('type', 'password')
+    }
+}
