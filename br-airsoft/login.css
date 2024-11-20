@@ -1,0 +1,440 @@
+@import url('https://fonts.googleapis.com/css2?family=Changa:wght@200..800&display=swap');
+:root{
+    --preto: #0000;
+    --cinza: #696969;
+    --laranja: #E37439;
+    --branco: #D9D9D9;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Changa", sans-serif;
+}
+body{
+    height: 100vh;
+    width: 100%;
+    background-color: var(--cinza);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/*INCIO DO HEADER*/
+header{
+    width: 100%;
+    background-color:#d9d9d9;
+    height: 250px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-left:25px ;
+    padding-right: 30px;
+    border-bottom:#e37439  solid 4px;
+    border-right: #e37439 solid 4px;
+    border-bottom-right-radius: 20px;
+}
+.logo{
+    filter: contrast(100);
+}
+#busca-cont{
+    background-color: #000;
+    width: 500px;
+    height: 50px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    display: flex;
+}
+
+#busca{
+    display: flex;
+   justify-content: center; 
+    width: 75%;
+    height: 100%;
+   background-color: transparent;
+   color: #d9d9d9;
+   font-size: 30px;
+   border: none;
+}
+#lupa-busca{
+    background-color: #000; 
+    color: #d9d9d9;
+    font-size: 30px;
+    text-align: center;
+    width: 25%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-left: solid;
+    padding: 10px 20px;
+    border-radius:  0 25px 25px 0;
+}
+#lupa-busca:hover{
+    background-color: #696969; 
+}
+/*FIM DO HEADER*/
+
+/*INCIO DO MENU LATERAL*/
+.menu-lateral
+{
+    width: 70px;
+    height: 100%;
+    background-color: #d9d9d9;
+    padding: 40px 0 40px 1%;
+    box-shadow: 5px 0 0 #E37439;
+    border-top-right-radius: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    transition: .6s;
+    z-index: 9999;
+}
+
+.menu-lateral.expandir
+{
+    width: 300px;
+}
+
+.btn-exp
+{
+    width: 100%;
+    padding-left: 10px;
+}
+
+.btn-exp > i
+{
+    color: #000000;
+    font-size: 34px;
+    cursor: pointer;
+}
+
+ul li.ativo
+{
+    background-color: #E37439;
+}
+
+ul
+{
+    height: 100%;
+    list-style-type: none;
+}
+ul li.item-menu
+{
+    transition: 0.6s;
+}
+
+ul li.item-menu:hover
+{
+    background-color: #E37439;
+}
+
+ul li.item-menu a
+{
+    color: #000000;
+    text-decoration: none;
+    font-size: 20px;
+    padding: 20px 4%;
+    display: flex;
+    line-height: 40px;
+}
+
+ul li.item-menu a .txt-link
+{
+    margin-left: 50px;
+    transition: .9s;
+    opacity: 0;
+    font-weight: bold;
+}
+
+.menu-lateral.expandir .txt-link
+{
+    margin-left: 20px;
+    opacity: 1.5;
+}
+ul li.item-menu a .icon i
+{
+    font-size: 30px;
+    margin-left: 5px;
+}
+/*FIM DO MENU LATERAL*/
+
+/*TELA LOGIN*/
+.tela_login{
+    background-color: var(--branco);
+    width: 40%;
+    height: 60%;
+    margin-top: 3%;
+    border-radius: 10px;
+    border-top: 5px solid var(--laranja);
+    border-right: 3px solid var(--laranja);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.tela_login .inputselogo{
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.tela_login .inputselogo .inputs form{
+    display: flex;
+    flex-direction: column;
+    width: 25rem;
+}
+#username{
+    outline: none;
+    height: 2rem;
+    padding: 2px;
+    outline: none;
+    border: none;
+    background-color: var(--cinza);
+    color: var(--branco);
+}
+#username::placeholder, #password::placeholder{
+   color: var(--branco);
+   font-family: "changa";
+   text-align: center;
+   font-size: large;
+}
+#password{
+    padding: 2px;
+    outline: none;
+    height:2rem;
+    margin-top: 1rem;
+    outline: none;
+    border: none;
+    background-color: var(--cinza);
+    color: var(--branco);
+}
+.tela_login .inputselogo .inputs .input_radio{
+    margin-top: 5%;
+}
+.logo1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.logo1 img{
+    width: 10rem;
+    height: 10rem;
+}
+.button_login{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.button_login button{
+    height: 2rem;
+    width: 5rem;
+    border-radius: 4px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    background-color: var(--cinza);
+    color: var(--branco);
+    font-family: "changa";
+    text-align: center;
+    font-size: large;
+}
+.criar_conta{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    color: var(--cinza);
+    font-family: "changa";
+}
+.criar_conta p a{
+    color: var(--laranja);
+    text-decoration: none;
+}
+
+/* Responsividade */
+
+@media screen and (max-width:1270px) {
+    header{
+        height: 230px;
+    }
+    .logo img{
+        width: 11rem;
+        height: 11rem;
+    }
+    #busca-cont{
+        width: 350px;
+        height: 48px;
+    }
+    .criar_conta h1{
+        font-size:larger;
+    }
+    .menu-lateral{
+        width: 50px;
+    }
+    .tela_login{
+        width: 50%;
+        height: 60%;
+    }
+   
+}   
+
+
+@media screen and (max-width:950px) {
+    header{
+        height: 215px;
+    }
+    #busca-cont{
+        height: 40px;
+    }
+    .logo img{
+        width: 9rem;
+        height: 9rem;
+    }
+    .tela_login .inputselogo .inputs form{
+        width: 18rem;
+    }
+    .logo1 img{
+        width: 9rem;
+        height: 9rem;
+    }
+    .menu-lateral.expandir{
+        width: 230px;
+    }
+    ul li.item-menu a .icon i{
+        font-size: 25px;
+        margin-left: 5px;
+    }
+    ul li.item-menu a{
+        font-size: 15px;
+    }
+
+}        
+
+@media screen and (max-width:670px){
+    header{
+        height: 190px;
+    }
+    #busca-cont{
+        width: 250px;   
+        height: 30px;
+    }
+    #lupa-busca{
+        font-size: 20px
+    }
+    .logo img{
+        width: 6rem;
+        height: 6rem;
+    }
+    .tela_login .inputselogo .inputs form{
+        width: 15rem;
+    }
+    .logo1 img{
+        width: 8rem;
+        height: 8rem;
+    }
+    .menu-lateral.expandir{
+        width: 200px;
+    }
+    ul li.item-menu a .icon i{
+        font-size: 23px;
+        margin-left: 5px;
+    }
+    ul li.item-menu a{
+        font-size: 13px;
+    }
+
+}
+
+@media screen and (max-width:570px){
+    header{
+        height: 185px;
+    }
+    #busca-cont{
+        width: 220px; 
+        height: 25px;
+    }
+    #lupa-busca{
+        font-size: 18px
+    }
+    .logo img{
+        width: 5rem;
+        height: 5rem;
+    }
+    .tela_login .inputselogo .inputs form{
+        width: 13rem;
+    }
+    .tela_login .inputselogo .logo1{
+        padding: 10px;
+    }
+    #username, #password{
+        height: 1.5rem;
+    }
+    .logo1 img{
+        width: 6rem;
+        height: 6rem;
+    }
+    .menu-lateral.expandir{
+        width: 180px;
+    }
+    ul li.item-menu a .icon i{
+        font-size: 20px;
+        margin-left: 4px;
+    }
+    ul li.item-menu a{
+        font-size: 11px;
+    } 
+    .criar_conta h1{
+        font-size: medium;
+    }
+    .criar_conta p{
+        font-size: small;
+    }
+}
+/*mobile*/
+@media screen and (max-width:460px){
+    header{
+        height: 125px;
+    }
+    .logo img{
+        width: 4rem;
+        height: 4rem;
+    }
+    #busca-cont{
+        width: 185px; 
+        height: 23px;
+    }
+    #lupa-busca{
+        font-size: 15px
+    }
+    .menu-lateral{
+        width: 45px;
+    }
+    .menu-lateral.expandir{
+        width: 150px;
+    }
+    ul li.item-menu a .icon i{
+        font-size: 20px;
+        margin-left: 3px;
+    }
+    ul li.item-menu a{
+        font-size: 10px;
+    }
+    .tela_login{
+        margin-left: 10%;
+    }
+    .tela_login .inputselogo .inputs form{
+        width: 10rem;
+    }
+    .tela_login .inputselogo .logo1{
+        padding: 10px;
+    }
+    .criar_conta h1{
+        font-size: small;
+    }
+
+}

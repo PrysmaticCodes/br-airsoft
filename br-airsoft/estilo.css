@@ -10,8 +10,7 @@
 /*INCIO DO HEADER*/
 header
 {
-    width: 95%;
-    margin-left: 5%;
+    width: 100%;
     background-color:#d9d9d9;
     height: 250px;
     display: flex;
@@ -32,21 +31,21 @@ header
 #busca-cont
 {
     background-color: #000;
-    width: 470px;
+    width: 450px;
     height: 50px;
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
     border-top-left-radius: 3px;
     border-bottom-left-radius: 3px;
-    overflow: hidden;
     display: flex;
 }
 
 #busca
 {
-   flex: 1;
-   height: 100%;
-   padding-left: 15px;
+    display: flex;
+   justify-content: center; 
+    width: 75%;
+    height: 100%;
    background-color: transparent;
    color: #d9d9d9;
    font-size: 30px;
@@ -57,13 +56,16 @@ header
     background-color: #000; 
     color: #d9d9d9;
     font-size: 30px;
-    width: 50px;
+    text-align: center;
+    width: 25%;
     height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    border-left: solid  ;
+    border-left: solid;
+    padding: 10px 20px;
+    border-radius:  0 25px 25px 0;
 }
 
 #lupa-busca:hover {
@@ -196,18 +198,21 @@ ul li.item-menu a .icon i
 }
 /*FIM DO MENU LATERAL*/
 /*INCIO DO IMG CENTRAL*/
+
 .img-central
 {
     margin-left: 12%;
     margin-top: 50px;
     position: relative;
-    width: 1000px;
+    width: 80%;
+    height: 70vh;
+    margin-bottom: 70px;
 }
 
 #imgc
 {
     width: 100%;
-    height: 400px;
+    height: 100%;
     border-radius: 10px;
     image-resolution:300dpi;
     filter: blur(0);
@@ -218,9 +223,10 @@ ul li.item-menu a .icon i
 
 #span-central
 {
-    padding-top: 15%;
+    opacity: 0;
+    padding-top: 13%;
     position: absolute;
-    top: -0%;
+    top: 0%;
     width: 100%;
     height: 329px;
     text-align: center; 
@@ -231,8 +237,9 @@ ul li.item-menu a .icon i
 }
 
 .img-central:hover #span-central
-{
-    font-size: 75px;
+{   
+    opacity: 5;
+    font-size: 30px;
     transition: all 3.8s ease;
     color: #fff;
 }
@@ -242,6 +249,106 @@ ul li.item-menu a .icon i
     filter: blur(2px);
 }
 /*FIM DO IMG CENTRAL*/
+/*INICIO DOS CARDS*/
+.main-card
+{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 80vh;
+    margin-left: 2%;
+}
+
+.card
+{
+    background-color: rgb(201, 83, 4);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 22%;
+    height: 60vh;
+    border-radius: 5px;
+}
+
+.img-card
+{
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.img-card img
+{
+    object-fit: cover;
+    width: 100%;
+    height: 250px;
+}
+
+#card-item
+{
+    width: 100%;
+    border-radius: 5px;
+    transition: 1.5s ease;
+}
+
+.nome
+{
+    position: relative;
+    z-index: 999px;
+    color: #fff;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    transition: 1.3s ease-in;
+    text-align: center;
+    overflow: hidden;
+    will-change: background-color, heigth, border-radius, overflow;
+}
+
+#cor
+{
+    color: transparent;
+    transition: color 1.5s ease-in;
+}
+#cor, span{
+    font-size: large;
+    padding-left: 8px;
+    padding-right: 8px;
+    font-family: "Changa", sans-serif;
+}
+
+.card:hover img
+{
+    filter: blur(1.5px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card:hover .nome
+{
+    background-color: rgb(201, 83, 4);
+    height: 100px;
+    border-radius: 5px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    overflow: unset;
+    transition: 1.1s ease-out;
+    transform: translateY(-25%);
+}
+
+.card:hover #cor
+{
+    color: #fff;
+    transition: color 1.8s ease-out;
+    font-size: 12px;
+}
+/*FIM DOS CARDS*/
 /*INCIO DO NEWS*/
 .news
 {
@@ -264,7 +371,6 @@ ul li.item-menu a .icon i
     height:250px;
     border-radius: 5px;
     position: relative;
-    right: 5%;
     border-top-right-radius: 15px;
     border-top-left-radius: 15px;
     border-top: solid 2px #E37439;
@@ -278,7 +384,6 @@ ul li.item-menu a .icon i
     width: 70%;
     height: 400px;
     position: relative;
-    left: 10%;
     border-radius: 5px;
     border-top-right-radius: 15px;
     border-top-left-radius: 15px;
@@ -413,9 +518,9 @@ footer
 
 #i-1:hover, #i-2:hover, #i-3:hover
 {
-    transform: scale(1.4);
+    transform: scale(1.1);
     color: #E37439;
-    transition: all 1.2s ease;
+    transition: all 1.1s ease;
 }
 
 .f3
@@ -426,4 +531,164 @@ footer
 
 
 
+/*TELA DE CADASTRO*/
+.cad-background
+{
+    background-color: #d9d9d9;
+    width: 70%;
+    height: 90vh;
+    position: relative;
+    margin-top: 2%;
+    left: 15%;
+    border-radius: 10px;
+    border-bottom: #E37439 solid;
+    border-right: #E37439 solid;
+    padding: 0.5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    
+}
 
+.cad-pt1
+{
+    border-radius: 3px;
+    width: 48%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.cad-pt1 img
+{
+    filter: contrast(100);
+    height: 40%;
+    image-rendering: optimizeQuality;
+}
+
+.cad-pt1 form
+{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: -35%;
+}
+
+.cad-pt1 h1
+{
+    text-align:center;
+    font-size: 23px;
+}
+
+.cad-pt1 form input {
+    width: 80%; 
+    padding: 1px; 
+    padding-left: 6px;
+    border-radius: 3px; 
+    font-size: 16px; 
+    margin-left: 10%;
+}
+
+.cad-pt1 button
+{
+    border-radius: 6px;
+    border: none;
+    width: 50%;
+    height: 40px;
+    margin-left: 25%;
+    margin-top: 10px;
+    font-size: 25px;
+    cursor: pointer;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #696969;
+    transition: all 0.8s ease-in-out;
+}
+
+.cad-pt1 button:hover
+{
+    font-size: 30px;
+    color: #fff;
+    transition: all 0.8s ease-in-out;
+}
+.cad-pt2
+{
+    border-radius: 3px;
+    width: 48%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#g-1, #g-2, #g-3 
+{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    font-size: 60px;
+    color: #000;
+    gap: 10px;
+    font-weight: bold;
+}
+
+.cad-pt2 span
+{
+    font-size: 25px;
+}
+
+#g-1:hover i, #g-2:hover i, #g-3:hover i
+{
+    color: #E37439;
+    transition: all 0.9s ease-in-out;
+}
+/*FIM DA TELA DE CADASTRO*/
+
+
+/*INICIO DA AREA DO CLIENTE*/
+.perfil-view
+{
+    display: flex;
+    align-items: center;
+    padding-left: 10%;
+    gap: 40px;
+    width: 100%;
+    height: 100vh;
+}
+
+.perfil
+{
+    width: 50%;
+    height: 90vh;
+    border: #000 solid;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.icon-perfil
+{
+    font-size: 100px; 
+    cursor: pointer;
+}
+
+.info-perfil
+{
+}
+
+.infos-compras
+{
+    width: 40%;
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border: #000 solid;
+}
+
+/*FIM DA AREA DO CLIENTE*/
