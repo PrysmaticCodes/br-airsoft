@@ -143,8 +143,8 @@ ul li.item-menu a .icon i
    padding: 5px;
 }
 .iptPesquisa:focus{
-   border-color: #bbb5b5;
-   box-shadow: 0 0 7px #bbb5b5;
+   border-color: var(--laranja);
+   box-shadow: 0 0 7px var(--laranja);
 }
 .iptPesquisa::placeholder{
     color: #888;
@@ -188,7 +188,7 @@ ul li.item-menu a .icon i
 }
 .card:hover{
     opacity: 1;
-    border: solid 2px grey; 
+    border: solid 2px var(--laranja); 
 }
 
 .img-card{
@@ -200,7 +200,7 @@ ul li.item-menu a .icon i
 }
 
 .img-card img{
-    object-fit: cover;
+
     width: 100%;
     height: 200px;
 }
