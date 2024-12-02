@@ -397,6 +397,7 @@ ul li.item-menu a .icon i
 }
 /*mobile*/
 @media screen and (max-width:460px){
+    /*header*/
     header{
         height: 125px;
     }
@@ -411,6 +412,7 @@ ul li.item-menu a .icon i
     #lupa-busca{
         font-size: 15px
     }
+    /*menu lateral*/
     .menu-lateral{
         width: 45px;
     }
