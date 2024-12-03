@@ -673,31 +673,36 @@ footer {
   /*img central*/
   .img-central {
     margin-left: 16%;
-    margin-top: 5%;
+    margin-top: 2%;
     width: 80%;
     height: 10vh;
   }
   #imgc {
     height: 150px;
   }
+  #span-central {
+    display: none;
+  }
+
   /*main card*/
 
   .main-card {
     display: flex;
     flex-direction: column;
-    margin-left: 6%;
+    margin-top: 25%;
+    margin-left: 23%;
+    width: 250px;
   }
   .main-card .card {
-    width: 298px;
-    height: 150px;
+    background-color: #696969;
+    justify-content: start;
+    height: 250px;
+    width: 300px;
   }
   .main-card .card .img-card img {
-    width: 50px;
-    height: 50px;
+      height: 150px;
   }
   .main-card .card .nome {
-    height: 40px;
-    width: 100%;
     font-size: 10px;
   }
   #cor {
@@ -706,7 +711,16 @@ footer {
   .card:hover .nome {
     display: none;
   }
-
+  .nome{
+    background-color: rgb(201, 83, 4);
+    height: 20%;
+  }
+  .img-card{
+   
+  }
+  #card-item{
+    
+  }
   /*News*/
   .news {
     margin-top: 2%;
@@ -741,9 +755,10 @@ footer {
     font-size: 40px;
   }
   /*footer*/
-  footer {
-    margin-left: 7%;
-    height: 400px;
+  footer{
+    margin-left: 10%;
+    width: 90%;
+    height: 50vh;
     display: flex;
     flex-direction: column-reverse;
   }
@@ -753,15 +768,21 @@ footer {
   }
   .icons-f2 {
     font-size: 30px;
+    margin-bottom: 2%;
   }
-
+  .txt-f2 span{
+    font-size: 2vh;
+  }
   .f1,
   .f2,
   .f3 {
     width: 100%;
-    height: 100px;
+    height: 80px;
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+  #logo-fot {
+    margin-top: 12%;
   }
 }
