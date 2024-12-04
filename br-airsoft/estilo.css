@@ -634,6 +634,25 @@ footer {
 
 /*RESPONSIVIDADE INDEX*/
 
+@media screen and (max-width: 1324px){
+  /*header*/
+  .logo img {
+    width: 10rem;
+    height: 10rem;
+  }
+  /*infos*/
+  #info-1 span , #info-2 span , #info-3 span{
+    font-size: 12px;
+  }
+  .infos i {
+    font-size: 38px;
+  }
+  #imgc{
+    width: 80%;
+    height: 80%;
+  }
+}
+
 @media screen and (max-width: 460px) {
   body{
     display: flex;
