@@ -635,6 +635,11 @@ footer {
 /*RESPONSIVIDADE INDEX*/
 
 @media screen and (max-width: 460px) {
+  body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;  
+  }
   /*header*/
   header {
     height: 125px;
@@ -672,12 +677,9 @@ footer {
   }
   /*img central*/
   .img-central {
-    margin-left: 16%;
+    margin-left: 13%;
     margin-top: 2%;
     width: 80%;
-    height: 10vh;
-  }
-  #imgc {
     height: 150px;
   }
   #span-central {
@@ -689,9 +691,10 @@ footer {
   .main-card {
     display: flex;
     flex-direction: column;
-    margin-top: 25%;
-    margin-left: 23%;
+    margin-top: 2%;
+    margin-left: 13%;
     width: 250px;
+    gap: 10px;
   }
   .main-card .card {
     background-color: #696969;
@@ -715,15 +718,10 @@ footer {
     background-color: rgb(201, 83, 4);
     height: 20%;
   }
-  .img-card{
-   
-  }
-  #card-item{
-    
-  }
+  
   /*News*/
   .news {
-    margin-top: 2%;
+    margin-top: 8%;
     height: 580px;
     justify-content: space-between;
   }
