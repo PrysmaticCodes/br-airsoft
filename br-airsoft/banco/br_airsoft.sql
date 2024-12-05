@@ -13,7 +13,7 @@ CREATE TABLE administrador (
         INSERT INTO administrador ( email, nome, senha)
 		VALUES ('admin@gmail.com', 'admin', 'admin123');
 
-
+ 
 -- Criando a tabela de Clientes
 CREATE TABLE cliente (
 	id_cliente int auto_increment primary key not null, 
@@ -49,10 +49,11 @@ CREATE TABLE Produto (
     nome_prod VARCHAR(70) NOT NULL,
     desc_prod TEXT,
     valor_prod DECIMAL(10,2) NOT NULL,
-    quant_produto int
+    quant_produto int,
+	caminho_imagem VARCHAR(150)
 );		
-ALTER TABLE produto
-ADD caminho_imagem VARCHAR(150);
+
+
 		-- Adicionando um produto ao banco 
 		INSERT INTO produto (nome_prod, desc_prod, valor_prod, quant_produto, caminho_imagem)
 		VALUES (
@@ -66,22 +67,33 @@ ADD caminho_imagem VARCHAR(150);
           
 
  -- Criando a tabela item que ligará o  produto ao carrinho 
-CREATE TABLE item (
-    id_prod INT,
-    quant_produto INT NOT NULL,
+CREATE TABLE compra (
+	cod_compra int Primary Key auto_increment,
+    data_compra  datetime , 
     id_cliente INT,
-    FOREIGN KEY (id_prod) REFERENCES Produto(id_prod),
     FOREIGN KEY (id_cliente) REFERENCES cliente(id_cliente)
-);
-	Alter table item 
-    ADD cod_compra int Primary Key auto_increment;
-    alter table item 
-    ADD  data_compra  datetime ; 
- 
- -- Adicionando o produto de id 1 ao cliente de id 1 com 2 vezes o mesmo item 
-		INSERT INTO item (id_cliente, id_prod, quant_produto)
-		VALUES (1, 1, 2);
+   );
+   
+    -- Adicionando o produto de Ao carrinho  
+		INSERT INTO compra (cod_compra,  data_compra, id_cliente)
+		VALUES (1, now(), 1);
 
+	
+    CREATE TABLE itens_compra (
+    nf int primary key auto_increment, 
+    quant_produto int not null,
+	cod_compra int, 
+    id_cliente int, 
+    id_prod int, 
+    FOREIGN KEY (cod_compra) REFERENCES compra(cod_compra), 
+	FOREIGN KEY (id_cliente) REFERENCES cliente(id_cliente), 
+	FOREIGN KEY (id_prod) REFERENCES produto(id_prod)
+    );
+    
+	-- Adicionando itens ao carrinho do cliente 
+    INSERT INTO itens_compra (quant_produto,  cod_compra, id_cliente, id_prod)
+		VALUES (2, 1, 1,1 );
+ 
 
 
 -- criando a procedure com informações do cliente 
@@ -139,9 +151,6 @@ CALL info_produto();
 
 DELIMITER $$
 
--- criando procedure das informações de compra do cliente 
-
-
 CREATE PROCEDURE carrinho(IN cliente_id INT)
 BEGIN
     SELECT 
@@ -152,26 +161,31 @@ BEGIN
         e.estado AS Estado,
         e.bairro AS Bairro,
         e.rua AS Rua,
-        caminho_imagem AS Caminho_Imagem,  -- Inclui o caminho da imagem do produto
+        co.data_compra AS Data_Compra, -- Data e horário da compra
         i.quant_produto AS Quantidade_Produto,  -- Quantidade do produto comprado
         p.nome_prod AS Nome_Produto,  -- Nome do produto
+        p.valor_prod AS Preco_Unitario, -- Preço unitário do produto
         (i.quant_produto * p.valor_prod) AS Total_Item,  -- Total do produto comprado
-        COALESCE(SUM(i.quant_produto), 0) AS Total_Itens_Comprados,  -- Total de itens comprados
-        COALESCE(SUM(i.quant_produto * p.valor_prod), 0) AS Valor_Total_Compra  -- Valor total gasto
+        p.caminho_imagem AS Caminho_Imagem -- Caminho da imagem do produto
     FROM 
         cliente c
     LEFT JOIN 
         endereco e ON c.id_cliente = e.id_cliente
     LEFT JOIN 
-        item i ON c.id_cliente = i.id_cliente  -- Tabela item para verificar as compras
+        compra co ON c.id_cliente = co.id_cliente -- Tabela compra
     LEFT JOIN 
-        produto p ON i.id_prod = p.id_prod  -- Tabela produto para pegar os preços e nomes
+        itens_compra i ON co.cod_compra = i.cod_compra -- Tabela itens_compra
+    LEFT JOIN 
+        produto p ON i.id_prod = p.id_prod -- Tabela produto
     WHERE 
         c.id_cliente = cliente_id
     GROUP BY 
-        c.id_cliente, c.nome_cliente, c.telefone, e.cep, e.estado, e.bairro, e.rua, i.id_prod, p.nome_prod, i.quant_produto;
+        c.id_cliente, c.nome_cliente, c.telefone, e.cep, e.estado, e.bairro, e.rua, 
+        co.data_compra, i.quant_produto, p.nome_prod, p.valor_prod, p.caminho_imagem;
 END$$
 
 DELIMITER ;
+
+
 
  CALL carrinho(1); -- Substitua "1" pelo ID de um cliente válido.
