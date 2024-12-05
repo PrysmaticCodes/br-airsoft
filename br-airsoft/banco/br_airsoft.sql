@@ -51,14 +51,19 @@ CREATE TABLE Produto (
     valor_prod DECIMAL(10,2) NOT NULL,
     quant_produto int
 );		
+ALTER TABLE produto
+ADD caminho_imagem VARCHAR(150);
 		-- Adicionando um produto ao banco 
-		INSERT INTO produto (nome_prod, desc_prod, valor_prod, quant_produto)
+		INSERT INTO produto (nome_prod, desc_prod, valor_prod, quant_produto, caminho_imagem)
 		VALUES (
-			'Pistola de Pressão Babayaga', 
+			'Pistola teste de imagem' , 
 			'Possui o sistema Blowback (GBB) que simula o recuo da arma de fogo, porém com menor potência, ou seja, cada disparo terá alto realismo, aumentando de forma absurda a semelhança com armas de fogo.', 
-			1600.00, 
-			20
+			1800.00, 
+			1, 
+            'E:\TCC\tcc\br-airsoft\br-airsoft\imagens.top-gun.png'
 			  );
+              
+          
 
  -- Criando a tabela item que ligará o  produto ao carrinho 
 CREATE TABLE item (
@@ -68,7 +73,11 @@ CREATE TABLE item (
     FOREIGN KEY (id_prod) REFERENCES Produto(id_prod),
     FOREIGN KEY (id_cliente) REFERENCES cliente(id_cliente)
 );
-
+	Alter table item 
+    ADD cod_compra int Primary Key auto_increment;
+    alter table item 
+    ADD  data_compra  datetime ; 
+ 
  -- Adicionando o produto de id 1 ao cliente de id 1 com 2 vezes o mesmo item 
 		INSERT INTO item (id_cliente, id_prod, quant_produto)
 		VALUES (1, 1, 2);
@@ -105,26 +114,33 @@ CALL info_cliente(1); -- Substitua "1" pelo ID do cliente desejado.
 
 -- criando a procedure com informações do produto 
 
+
 DELIMITER $$
-CREATE PROCEDURE info_produto ()
+
+CREATE PROCEDURE info_produto()
 BEGIN
     SELECT 
         id_prod AS ID,
         nome_prod AS Nome,
+        desc_prod AS Descricao,
         valor_prod AS Preco,
-        quant_produto AS Quantidade
+        quant_produto AS Quantidade,
+        caminho_imagem AS Caminho_Imagem -- Inclui o caminho da imagem do produto
     FROM 
         produto;
 END$$
 
 DELIMITER ;
 
+
 CALL info_produto();
+
 
 
 DELIMITER $$
 
 -- criando procedure das informações de compra do cliente 
+
 
 CREATE PROCEDURE carrinho(IN cliente_id INT)
 BEGIN
@@ -136,6 +152,7 @@ BEGIN
         e.estado AS Estado,
         e.bairro AS Bairro,
         e.rua AS Rua,
+        caminho_imagem AS Caminho_Imagem,  -- Inclui o caminho da imagem do produto
         i.quant_produto AS Quantidade_Produto,  -- Quantidade do produto comprado
         p.nome_prod AS Nome_Produto,  -- Nome do produto
         (i.quant_produto * p.valor_prod) AS Total_Item,  -- Total do produto comprado
