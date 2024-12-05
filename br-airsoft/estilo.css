@@ -634,22 +634,165 @@ footer {
 
 /*RESPONSIVIDADE INDEX*/
 
-@media screen and (max-width: 1324px){
+@media screen and (max-width: 1324px){ /*até 1110 fica suave*/
   /*header*/
   .logo img {
     width: 10rem;
     height: 10rem;
   }
+
   /*infos*/
+
   #info-1 span , #info-2 span , #info-3 span{
     font-size: 12px;
   }
   .infos i {
     font-size: 38px;
   }
-  #imgc{
+  #span-central{
+    display: none;
+  }
+
+  /*img central*/
+
+  .img-central{
+    width: 83%;
+    height: auto;
+  }
+
+  /*main card*/
+
+  .main-card{
+    display: flex;
+    flex-direction: row;
+    width: 87%;
+    margin-left: 10%;
+  }
+  
+  .card{
+    width: 37vh;
+    height: 37vh;
+  }
+
+  #card-item{
+    width: 100%;
+  }
+  #cor{
+    display: none;
+  }
+
+  /*news*/
+
+  .news{
+    margin-left: 5%;
+  }
+}
+@media screen and (max-width: 1110px){
+  /*header*/
+  .logo img {
+    width: 8rem;
+    height: 8rem;
+  }
+  #busca-cont {
+    height: 40px;
+  }
+  /*menu lateral*/
+  .menu-lateral{
+    width: 68px;
+  }
+  .menu-lateral.expandir {
+    width: 270px;
+  }
+
+  /*infos*/
+
+  #info-1 span , #info-2 span , #info-3 span{
+    font-size: 11px;
+  }
+  .infos i {
+    font-size: 35px;
+  }
+  /*main card*/
+  .card{
+    width: 32vh;
+  }
+  
+  #card-item{
+    width: 100%;
+  }
+
+  #cor{
+    display: none;
+  }
+  /*news*/
+
+  .news{
+    width: 95%;
+    margin-left: 6%;
+  }
+
+}
+@media screen and (max-width: 1000px){
+  /*header*/
+  .logo img {
+    width: 7rem;
+    height: 7rem;
+  }
+  #busca-cont {
+    height: 38px;
+  }
+  /*menu lateral*/
+  .menu-lateral {
+    width: 70px;
+  }
+  
+  .menu-lateral.expandir {
+    width: 265px;
+  }
+  
+  .btn-exp > i {
+    font-size: 32px; 
+  }
+  
+  ul li.item-menu a .icon i {
+    font-size: 27px;
+    margin-left: 5px;
+  }
+  #txt-link{
+    font-size: 8px;
+  }
+
+  /*main card*/
+  .main-card{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .card{
+    width: 60%;
+    height: auto;
+  }
+  .nome{
+    height: auto;
+  }
+  /*news*/
+  .news{
     width: 80%;
-    height: 80%;
+    height: 500px;
+    margin-top: 32%;
+  }
+  .txt-news-1, #txt-news-2{
+    height: 180px;
+    
+  }
+  #txt-1, #txt-2{
+    font-size: medium;
+  }
+  .carrosel-news{
+    height: 250px;
+  }
+  #btn-avanca, #btn-volta{
+    font-size: 50px;
   }
 }
 
@@ -701,6 +844,10 @@ footer {
     width: 80%;
     height: 150px;
   }
+  #imgc{
+    width: 100%;
+    height: 100%;
+  }
   #span-central {
     display: none;
   }
@@ -740,7 +887,7 @@ footer {
   
   /*News*/
   .news {
-    margin-top: 8%;
+    margin-top: 35%;
     height: 580px;
     justify-content: space-between;
   }
