@@ -1,0 +1,211 @@
+﻿@inject TCC_BR.Libraries.Login.LoginUsuario _loginUsuario
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="~/css/estilo.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="~/imagens/logo.png" alt="logo da loja">
+        </div>
+        <div id="busca-cont">
+            <input type="text" id="busca">
+            <i class="bi bi-search" id="lupa-busca"></i></button>
+        </div>
+    </header>
+
+    <div class="infos">
+
+        <div id="info-1">
+            <i class="bi bi-credit-card-2-back"></i>
+            <span>Parcele em até 12x Sem juros</span>
+        </div>
+        <div id="info-2">
+            <i class="bi bi-truck"></i>
+            <span>Entrega mais rápida do Brasil!</span>
+        </div>
+        <div id="info-3">
+            <i class="bi bi-tags"></i>
+            <span>Descontos imperdiveis</span>
+        </div>
+    </div>
+    <nav class="menu-lateral">
+        <div class="btn-exp">
+            <i class="bi bi-list" id="btn-a"></i>
+        </div>
+        <ul>
+            <li class="item-menu ativo">
+                <a asp-controller="Home" asp-action="Index">
+                    <span class="icon"><i class="bi bi-house-fill"></i></span>
+                    <span class="txt-link">Home</span>
+                </a>
+            </li>
+            <li class="item-menu">
+                <a href="#">
+                    <span class="icon"><i class="bi bi-cart4"></i></i></span>
+                    <span class="txt-link">Carrinho</span>
+                </a>
+            </li>
+            <li class="item-menu">
+                <a asp-controller="Produto" asp-action="Index">
+                    <span class="icon"><i class="bi bi-boxes"></i></span>
+                    <span class="txt-link">Produtos</span>
+                </a>
+            </li>
+            <li class="item-menu">
+                <a href="#card-item">
+                    <span class="icon"><i class="bi bi-tags"></i></span>
+                    <span class="txt-link">Ofertas</span>
+                </a>
+            </li>
+            <li class="item-menu">
+                <a href="#txt-1">
+                    <span class="icon"><i class="bi bi-rocket-takeoff"></i></span>
+                    <span class="txt-link">Novidades</span>
+                </a>
+            </li>
+            <li class="item-menu">
+                @if (_loginUsuario != null && _loginUsuario.GetUsuario() != null)
+                {
+                    <a asp-controller="UsuarioLogin" asp-action="PainelCliente">
+                        <span class="icon"><i class="bi bi-person-circle"></i></span>
+                        <span class="txt-link">Minha Conta</span>
+                    </a>
+                }
+
+                else
+                {
+                    <a asp-controller="UsuarioLogin" asp-action="Login">
+                        <span class="icon"><i class="bi bi-person-circle"></i></span>
+                        <span class="txt-link">Minha Conta</span>
+                    </a>
+                    
+                }
+            </li>
+        </ul>
+    </nav>
+
+
+    <div class="img-central">
+        <img src="~/imagens/panfleto.jpg" alt="arma principal" id="imgc">
+        <div id="span-central">
+            <h1>Exclusividade é aqui !</h1>
+        </div>
+    </div>
+
+
+    <!--teste do card-->
+    <section class="main-card">
+
+        <div class="card">
+
+            <div class="img-card">
+                <img src="~/imagens/pistolaTAG.png" alt="fuzil" id="card-item">
+            </div>
+
+            <div class="nome">
+
+                <div>
+                    <h2>Pistola TAG Baba Yaga</h2>
+                </div>
+
+                <div id="cor">
+                    <span>A Pistola Tag Baba Yaga é uma réplica compacta e de alto desempenho, ideal para jogos de airsoft de curta distância. Com funcionamento a gás e sistema de blowback, ela oferece uma experiência realista com maior sensação de impacto. Perfeita como arma secundária, combina agilidade, precisão e robustez.</span>
+                </div>
+
+            </div>
+
+        </div>
+        <div class="card">
+
+            <div class="img-card">
+                <img src="~/imagens/panfleto.jpg" alt="fuzil" id="card-item">
+            </div>
+
+            <div class="nome">
+
+                <div>
+                    <h2>Fuzil M4 kwa TAN</h2>
+                </div>
+
+                <div id="cor">
+                    <span>O Fuzil KWA M4A1 é uma réplica de alta performance, perfeita para quem busca precisão e confiabilidade no airsoft. Com construção robusta e sistema elétrico, ele oferece ótimo alcance e cadência de tiro. Seu hop-up ajustável proporciona maior precisão, tornando-o ideal para diferentes tipos de jogos. A escolha certa para quem quer um fuzil durável e eficiente.</span>
+                </div>
+
+            </div>
+
+        </div>
+        <div class="card">
+
+            <div class="img-card">
+                <img src="~/imagens/sniperDragonuv.jpg" alt="fuzil" id="card-item">
+            </div>
+
+            <div class="nome">
+
+                <div>
+                    <h2>Sniper Dragunov</h2>
+                </div>
+
+                <div id="cor">
+                    <span>A Sniper Dragunov é uma réplica de precisão, ideal para jogadores que buscam alto desempenho em longas distâncias. Com design robusto e sistema de funcionamento a mola, oferece excelente alcance e precisão, tornando-se a escolha perfeita para atiradores que desejam dominar o campo de batalha com precisão cirúrgica. Ideal para combates em campo aberto.</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+    <!--teste do card-->
+
+    <div class="news">
+        <div class="txt-news-1">
+            <span id="txt-1n">
+                BR-Airsoft lugar onde a precisão e a confiança se encontram.
+            </span>
+        </div>
+        <div class="carrosel-news">
+            <ion-icon name="caret-back-circle-outline" id="btn-volta"></ion-icon>
+            <img src="~/imagens/carrosel-1.png" alt="" id="img-carrosel">
+            <ion-icon name="caret-forward-circle-outline" id="btn-avanca"></ion-icon>
+        </div>
+        <div class="txt-news-2">
+            <span class="txt-2n">
+                Na BR Airsoft, oferecemos as melhores réplicas e acessórios para quem busca qualidade.
+                Trabalhamos com as principais marcas do mercado, garantindo produtos de alta performance e durabilidade. Confie na BR Airsoft para equipar suas aventuras com as melhores opções e total confiança.
+                Sua satisfação é nossa prioridade!
+            </span>
+        </div>
+    </div>
+
+    <footer>
+        <div class="f1">
+            <img src="~/imagens/logo-esura.svg" alt="Logo-Prysmatic" id="logo-fot">
+            <span>Powered By</span>
+        </div>
+        <div class="f2">
+            <div class="txt-f2">
+                <span>Contatos</span>
+            </div>
+            <div class="icons-f2">
+                <ion-icon name="logo-whatsapp" id="i-1" alt="Whatsapp"><a href="#"></a></ion-icon>
+                <ion-icon name="logo-instagram" id="i-2" alt="Instagram"><a href="#"></a></ion-icon>
+                <ion-icon name="chatbubbles-outline" id="i-3" alt="Suporte"><a href="#"></a></ion-icon>
+            </div>
+        </div>
+        <div class="f3">
+            <span>Mais</span>
+        </div>
+    </footer>
+
+    <script src="~/js/auto.js"></script>
+</body>
+</html>
