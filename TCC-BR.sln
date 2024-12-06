@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
@@ -20,3 +21,30 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 EndGlobal
+=======
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34511.84
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TCC-BR", "TCC-BR\TCC-BR.csproj", "{14B4B894-B5A0-41A4-8EF4-FAA780F6B3C0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{14B4B894-B5A0-41A4-8EF4-FAA780F6B3C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14B4B894-B5A0-41A4-8EF4-FAA780F6B3C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14B4B894-B5A0-41A4-8EF4-FAA780F6B3C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14B4B894-B5A0-41A4-8EF4-FAA780F6B3C0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0ABEBBB2-7B19-4B4E-B4EC-CB92251445B0}
+	EndGlobalSection
+EndGlobal
+>>>>>>> f71c5fd1607ea9b877a7fdbfe4a888ab72f5b4a4
